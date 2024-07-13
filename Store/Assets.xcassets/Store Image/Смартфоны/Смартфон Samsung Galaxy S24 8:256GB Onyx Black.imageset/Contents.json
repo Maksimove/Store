@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Смартфон Samsung Galaxy S24 8:256GB Onyx Black.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

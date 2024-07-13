@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Ноутбук-трансформер ASUS Vivobook S 16 Flip:16\":AMD Ryzen 5 7530U:16:512:Win:Black.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

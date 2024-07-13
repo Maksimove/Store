@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Ноутбук HUAWEI MateBook D 16:16\":Core i7-13700H:16:1TB:Win:Space Gray (53013WXB).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

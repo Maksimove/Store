@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Ноутбук HUAWEI MateBook D 16:16\":Core i5-12450H:8:512:Win:Space Gray (53013WXE).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

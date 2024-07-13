@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Ноутбук игровой MSI Katana 17:17.3\":Core i5-12450H:8:512:RTX 3050:noOS:Black (B12UCR-1024XRU).jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
