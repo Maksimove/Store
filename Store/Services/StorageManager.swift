@@ -16,10 +16,10 @@ final class StorageManager {
     
     func fetchUser() -> User {
         guard let userData = userDefaults.data(forKey: userKey) else {
-            return User(name: nil, password: nil, phone: nil)
+            return User(name: "", password: "", phone: 0)
         }
         guard let user = try? JSONDecoder().decode(User.self, from: userData) else {
-            return User(name: nil, password: nil, phone: nil)
+            return User(name: "", password: "", phone: 0)
         }
         return user
     }
