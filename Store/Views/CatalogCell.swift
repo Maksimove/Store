@@ -7,17 +7,22 @@
 
 import UIKit
 
-class CatalogCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+final class CatalogCell: UICollectionViewCell {
+    @IBOutlet var productImage: UIImageView!
+    @IBOutlet var productName: UILabel!
+    @IBOutlet var price: UILabel!
+    
+    var product: Product!
+    
+    private let basketProducts = ProductManager.shared
+    
+    func setupUI(from product: Product) {
+        productImage.image = UIImage(named: product.image)
+        productName.text = product.name
+        price.text = "\(product.price)$"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    @IBAction func addProduct() {
+        basketProducts.basket.append(product)
     }
-
 }

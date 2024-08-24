@@ -7,17 +7,16 @@
 
 import UIKit
 
-class BasketCell: UITableViewCell {
+final class BasketCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet var imageProduct: UIImageView!
+    @IBOutlet var nameProduct: UILabel!
+    @IBOutlet var priceProduct: UILabel!
+    
+    func setupUI(from product: Product) {
+        imageProduct.image = UIImage(named: product.image)
+        nameProduct.text = product.name
+        priceProduct.text = "\(product.price)$"
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
 }

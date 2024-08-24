@@ -7,6 +7,15 @@
 
 import UIKit
 
-class CategoryCell: UICollectionViewCell {
+final class CategoryCell: UICollectionViewCell {
     
+    @IBOutlet var categoryImage: UIImageView!
+    
+    @IBOutlet var categoryName: UILabel!
+    
+    
+    func setupUI(from value: String, withImage image: String) {
+        categoryImage.image = UIImage(named: image)
+        categoryName.text = value
+    }
 }
