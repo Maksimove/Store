@@ -9,8 +9,7 @@ import Foundation
 
 final class ProductManager {
     static let shared = ProductManager()
-    
     var basket: [Product] = []
-    
+
     private init() {}
 }

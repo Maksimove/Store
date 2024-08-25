@@ -16,12 +16,20 @@ final class BasketViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = 200
+        getTotalSum()
+        tableView.rowHeight = 150
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        getTotalSum()
+    }
+    
+    private func getTotalSum() {
+        let totalSum = basketProducts.basket.map { $0.price }.reduce(0, + )
+        totalCost.text = "Итог: \(totalSum)$"
+        tabBarController?.viewControllers?.last?.tabBarItem.badgeValue = "\(basketProducts.basket.count)"
     }
 }
 
@@ -43,6 +51,7 @@ extension BasketViewController: UITableViewDataSource {
         if editingStyle == .delete {
             basketProducts.basket.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            getTotalSum()
         }
     }
 }
