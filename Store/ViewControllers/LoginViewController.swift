@@ -27,14 +27,15 @@ enum AlertStatus {
 }
 
 final class LoginViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet var loginTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
+    // MARK: - Private properties
     private var user: User!
-    
     private let userDefaults = StorageManager.shared
     
+    // MARK: - View life cycle
     override func viewDidLoad() {
         user = userDefaults.fetchUser()
     }
@@ -42,11 +43,8 @@ final class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let registerVC = segue.destination as? RegisterViewController else { return }
         registerVC.delegate = self
-//        if let tabBarVC = segue.destination as? UITabBarController {
-//            tabBarVC.viewControllers?.last
-//        }
-//        
     }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
        
             guard let login = loginTF.text, !login.isEmpty else {
@@ -64,15 +62,18 @@ final class LoginViewController: UIViewController {
 
         return true
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
     
+    // MARK: - IBActions
     @IBAction func registerButtonTapped() {
         performSegue(withIdentifier: "register", sender: nil)
     }
-
+    
+    // MARK: - Private methods
     private func showAlert(withStatus status: AlertStatus) {
         let alert = UIAlertController(title: "Ошибка", message: status.message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "ок", style: .cancel)
@@ -86,6 +87,7 @@ extension LoginViewController: RegisterViewControllerDelegate {
         self.user = user
     }
 }
+    // MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField == loginTF 

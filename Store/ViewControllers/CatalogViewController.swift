@@ -8,9 +8,10 @@
 import UIKit
 
 final class CatalogViewController: UICollectionViewController {
-    
+    // MARK: - Public properties
     var catalog: [Product]!
-
+    
+    // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         catalog.count
     }
@@ -22,7 +23,7 @@ final class CatalogViewController: UICollectionViewController {
         let product = catalog[indexPath.item]
         cell.setupUI(from: product)
         cell.product = product
+        
         return cell
     }
 }
-

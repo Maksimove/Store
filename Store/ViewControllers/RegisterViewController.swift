@@ -8,19 +8,23 @@
 import UIKit
 
 final class RegisterViewController: UIViewController {
-    
+    // MARK: - IBOutlets
     @IBOutlet var nameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var phoneNumberTF: UITextField!
     
+    // MARK: - Public properties
     weak var delegate: RegisterViewControllerDelegate?
+    
+    // MARK: - Private properties
     private let userDefaults = StorageManager.shared
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-
+    
+    // MARK: - IBActions
     @IBAction func registrationButtonTapped() {
         let user = User(
             name: nameTF.text ?? "",
@@ -36,7 +40,7 @@ final class RegisterViewController: UIViewController {
         dismiss(animated: true)
     }
 }
-
+    // MARK: - UITextFieldDelegate
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {

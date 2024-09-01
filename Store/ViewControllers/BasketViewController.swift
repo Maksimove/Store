@@ -30,6 +30,14 @@ final class BasketViewController: UIViewController {
         getTotalSum()
         checkBasketCount()
     }
+
+    // MARK: - @IBOActions
+    @IBAction func removeAllButton(_ sender: UIBarButtonItem) {
+        basketProducts.basket.removeAll()
+        getTotalSum()
+        checkBasketCount()
+        tableView.reloadData()
+    }
     
     // MARK: - Private methods
     private func getTotalSum() {
@@ -50,20 +58,13 @@ final class BasketViewController: UIViewController {
             deleteAllProducts.isEnabled = true
         }
     }
-    // MARK: - @IBOActions
-    @IBAction func removeAllButton(_ sender: UIBarButtonItem) {
-        basketProducts.basket.removeAll()
-        getTotalSum()
-        checkBasketCount()
-        tableView.reloadData()
-    }
 }
     // MARK: - UITableViewDataSource
 extension BasketViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         basketProducts.basket.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "basket", for: indexPath)
        guard let cell = cell as? BasketCell else { return UITableViewCell() }
@@ -72,6 +73,7 @@ extension BasketViewController: UITableViewDataSource {
        cell.setupUI(from: product)
        return cell
    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             basketProducts.basket.remove(at: indexPath.row)

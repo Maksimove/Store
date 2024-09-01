@@ -8,7 +8,7 @@
 import UIKit
 
 final class CategoriesViewController: UICollectionViewController {
-    
+    // MARK: - Private properties
     private let catalog = Catalog.getCatalog()
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -20,10 +20,11 @@ final class CategoriesViewController: UICollectionViewController {
             catalogVC.title = catalog.category[indexPath.item]
         }
     }
-    
+    // MARK: - UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         catalog.category.count
     }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath)
         guard let cell = cell as? CategoryCell else { return UICollectionViewCell() }
@@ -34,7 +35,4 @@ final class CategoriesViewController: UICollectionViewController {
         cell.setupUI(from: category, withImage: imageCategory)
         return cell
     }
-
 }
-
-
