@@ -42,7 +42,10 @@ final class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let registerVC = segue.destination as? RegisterViewController else { return }
         registerVC.delegate = self
-        
+//        if let tabBarVC = segue.destination as? UITabBarController {
+//            tabBarVC.viewControllers?.last
+//        }
+//        
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
        

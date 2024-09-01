@@ -21,7 +21,7 @@ struct Catalog {
     static func getCatalog() -> Catalog {
         Catalog(
             category: [
-                "Телефоны",
+                "Смартфоны",
                 "Ноутбуки",
                 "Телевизоры",
                 "Наушники",
@@ -781,7 +781,7 @@ struct Catalog {
     }
 }
 
-struct Product {
+struct Product: Codable {
     let name: String
     let image: String
     let price: Int
